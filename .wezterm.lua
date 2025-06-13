@@ -15,7 +15,6 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color" -- Set the terminal type
 
-config.font = wezterm.font("Iosevka Custom")
 -- config.font = wezterm.font("Monocraft Nerd Font")
 -- config.font = wezterm.font("FiraCode Nerd Font Mono")
 -- config.font = wezterm.font("JetBrains Mono Regular")
@@ -24,14 +23,14 @@ config.cell_width = 0.9
 -- config.font = wezterm.font("Hasklig")
 -- config.font = wezterm.font("Monoid Retina")
 -- config.font = wezterm.font("InputMonoNarrow")
--- config.font = wezterm.font("mononoki Regular")
+config.font = wezterm.font("Consolas")
 -- config.font = wezterm.font("Iosevka")
 -- config.font = wezterm.font("M+ 1m")
 -- config.font = wezterm.font("Hack Regular")
 -- config.cell_width = 0.9
 config.window_background_opacity = 0.9
 config.prefer_egl = true
-config.font_size = 18.0
+config.font_size = 12.0
 
 config.window_padding = {
 	left = 0,
@@ -93,19 +92,24 @@ config.keys = {
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
-		key = "I",
+		key = "O",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
-		key = "O",
+		key = "P",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
-		key = "P",
+		key = "I",
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "Q",
+		mods = "CTRL|SHIFT",
+		action = act.CloseCurrentPane({ confirm = false }),
 	},
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
 	{ key = "L", mods = "CTRL", action = act.ShowDebugOverlay },
@@ -171,14 +175,14 @@ config.colors = {
 }
 
 config.window_frame = {
-	font = wezterm.font({ family = "Iosevka Custom", weight = "Regular" }),
+	font = wezterm.font({ family = "Consolas", weight = "Regular" }),
 	active_titlebar_bg = "#0c0b0f",
 	-- active_titlebar_bg = "#181616",
 }
 
 -- config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 config.window_decorations = "NONE | RESIZE"
-config.default_prog = { "powershell.exe", "-NoLogo" }
+config.default_prog = { "C:\\Program Files\\Git\\usr\\bin\\bash.exe", "-l" }
 config.initial_cols = 80
 -- config.window_background_image = "C:/dev/misc/berk.png"
 -- config.window_background_image_hsb = {
