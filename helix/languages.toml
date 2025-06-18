@@ -1,0 +1,29 @@
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["pyright", "ruff-lsp"]
+
+[language.formatter]
+command = "black"
+args = ["--quiet", "-"]
+
+# Configuração dos Language Servers
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff-lsp]
+command = "ruff-lsp"
+
+# Configuração do Debugger (debugpy) - Sintaxe correta para v25.x
+[language.debugger]
+name = "debugpy"
+command = "python"
+args = ["-m", "debugpy.adapter"]
+transport = "stdio"
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
+args = { mode = "debug", program = "{0}" }

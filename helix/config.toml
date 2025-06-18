@@ -1,0 +1,5 @@
+[editor]
+auto-format = true
+
+[editor.lsp]
+enable = true
